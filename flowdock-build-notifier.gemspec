@@ -6,8 +6,8 @@ require 'flowdock_build_notifier/version'
 Gem::Specification.new do |spec|
   spec.name          = "flowdock-build-notifier"
   spec.version       = FlowdockNotify::VERSION
-  spec.authors       = ["Aaron Jensen"]
-  spec.email         = ["aaronjensen@gmail.com"]
+  spec.authors       = ["Aaron Jensen", "Shaun Dern"]
+  spec.email         = ["aaronjensen@gmail.com", "shaun@substantial.com"]
   spec.summary       = %q{Notifies Flowdock about builds.}
   spec.description   = %q{Notifies Flowdock about builds.}
   spec.homepage      = ""
