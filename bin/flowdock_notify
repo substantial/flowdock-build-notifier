@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require_relative '../lib/flowdock_build_notifier'
+
+begin
+  if ARGV.first == '--author_email'
+    puts FlowdockBuildNotifier::FlowdockNotification.new(nil).author_email
+  else
+    FlowdockBuildNotifier::FlowdockNotification.new(ARGV.first).notify
+  end
+rescue => e
+  $stderr.puts e
+  $stderr.puts e.backtrace
+end
