@@ -33,6 +33,8 @@ module FlowdockBuildNotifier
 
   class TeamRoomSender < FlowdockMessageSender
     def flow
+      puts client
+      puts client.get('/flows')
       @flow_id ||= client.get('/flows').detect do |flow|
         flow['name'] == config.flow_name
       end
