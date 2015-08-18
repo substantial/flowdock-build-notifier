@@ -11,6 +11,11 @@ cannot find it out in the environment.
 
 1. Add this gem to your Gemfile
 
+2. Set up a TeamCity account with access to all the projects being reported on 
+   and a Flowdock account with access to your team's flow - it will be the
+   account sending messages to your team members. Put these bots'
+   credentials into the configuration below.
+
 2. Make a `.flowdock_build_notifier.yml` file in the root of your project. An
    example is given below: 
 
@@ -41,9 +46,8 @@ cannot find it out in the environment.
    The email map is used to connect the author of the last commit to the
    corresponding Flowdock account.
 
-3. On TeamCity, set up your build configuration steps to run `bundle install`
-   initially. Make a final step to trigger regardless of previous step outcomes
-   and use the following as a meta-runner: 
+3. Under project settings on TeamCity, upload the following xml document as a
+   meta-runner: 
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -65,9 +69,15 @@ cannot find it out in the environment.
    </meta-runner>
    ```
 
-   The previous steps all rely on bot accounts - set up a TeamCity account with
-   access to all the projects being reported on and a Flowdock account with access
-   to the listed flow. Put these bots' credentials into the configuration above. 
+   ![Meta-runner section](./readme_screenshots/meta_runners_section.png)
 
-4. If you want a particular build to report failure in the main flow instead of
+
+4. Set up your build configuration steps to run `bundle install`
+   initially. Make a final step which executes the notifier meta-runner
+   regardless of previous failures.
+
+   ![Meta-runner configuration step](./readme_screenshots/set_meta_runner_step.png)
+   ![Use meta-runner in all cases](./readme_screenshots/use_runner_even_if_previous_steps_fail.png)
+
+5. If you want a particular build to report failure in the main flow instead of
    private messages, set `ENV['FLOWDOCK_NOTIFY_ALL_ON_FAILURE']` to true.
