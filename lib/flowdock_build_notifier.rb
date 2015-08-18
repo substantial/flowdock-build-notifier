@@ -6,8 +6,6 @@ require_relative 'flowdock_build_notifier/flowdock_message_sender'
 require_relative 'flowdock_build_notifier/build_metadata'
 require_relative 'flowdock_build_notifier/flowdock_message_sender_factory'
 
-require 'pry'
-
 module FlowdockBuildNotifier
   class FlowdockNotification
     attr_reader :build_id, :config
