@@ -78,7 +78,7 @@ cannot find it out in the environment.
 
    ![Meta-runner configuration step](./readme_screenshots/set_meta_runner_step.png)
 
--------------------------
+   ---
 
    ![Use meta-runner in all cases](./readme_screenshots/use_runner_even_if_previous_steps_fail.png)
 
