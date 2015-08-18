@@ -77,6 +77,9 @@ cannot find it out in the environment.
    regardless of previous failures.
 
    ![Meta-runner configuration step](./readme_screenshots/set_meta_runner_step.png)
+
+-------------------------
+
    ![Use meta-runner in all cases](./readme_screenshots/use_runner_even_if_previous_steps_fail.png)
 
 5. If you want a particular build to report failure in the main flow instead of
